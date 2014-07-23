@@ -1,0 +1,24 @@
+<h1>Homes#index</h1>
+<p>Find me in app/views/homes/index.html.erb</p>
+
+<h1>
+  <%= link_to "Teacher", teachers_path %>
+</h1>
+
+<br/>
+
+<h1>
+  <%= link_to "Documents", documents_path %>
+</h1>
+
+<p>
+  <%= link_to "Doc Download", documents_path(format: 'pdf') %>
+</p>
+
+<style>
+  @media print {
+  .pdf_exclude {
+        display: none;
+  }
+}
+</style>

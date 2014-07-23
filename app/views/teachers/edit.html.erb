@@ -1,0 +1,40 @@
+<%= render_breadcrumbs %>
+
+<br/>
+<div class="panel-body">
+  <%= form_for @teacher do |f| %>
+    <div class="row">
+      <div class="form-group">
+        <p>Name:</p>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <p>Age:</p>
+        <%= f.text_field :age %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <p>Gender:</p>
+        <%= f.text_field :gender %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <p>Address:</p>
+        <%= f.text_field :address %>
+      </div>
+    </div>
+    
+  <div class="row">
+    <div class="form-group">
+      <%= f.submit "Update", :class => "btn btn-md btn-success"%>
+    </div>
+  </div>
+  <% end %>
+</div>

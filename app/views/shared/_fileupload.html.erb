@@ -1,0 +1,80 @@
+<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+<div class="row fileupload-buttonbar">
+  <div class="span12" style="text-align: justify;">
+    <!-- The fileinput-button span is used to style the file input field as button -->
+    <span class="btn btn-small btn-success fileinput-button">
+      <i class="icon-plus icon-white"></i>
+      <span><%= t('fileupload.add_files') %></span>
+        <input id="picture_path" type="file" name="picture[item]" multiple="multiple">
+    </span>
+    <button type="submit" class="btn btn-small btn-primary start">
+      <i class="icon-upload icon-white"></i>
+      <span>Upload all<%#= t('fileupload.start_upload') %></span>
+    </button>
+    <button type="reset" class="btn btn-small btn-warning cancel">
+      <i class="icon-ban-circle icon-white"></i>
+      <span><%= t('fileupload.cancel_upload') %></span>
+    </button>
+    <button type="button" class="btn btn-small btn-danger delete">
+      <i class="icon-trash icon-white"></i>
+      <span><%= t('fileupload.delete_multi') %></span>
+    </button>
+    <input type="checkbox" class="toggle">
+  </div>
+  <!-- The global progress information -->
+  <div class="span5 fileupload-progress fade">
+    <!-- The global progress bar -->
+    <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+      <div class="bar" style="width:0%;"></div>
+    </div>
+    <!-- The extended global progress information -->
+    <div class="progress-extended">&nbsp;</div>
+  </div>
+</div>
+<!-- The loading indicator is shown during image processing -->
+<div class="fileupload-loading"></div>
+<br>
+<!-- The table listing the files available for upload/download -->
+<table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
+
+
+<!-- modal-gallery is the modal dialog used for the image gallery -->
+<div id="modal-gallery" class="modal modal-gallery hide fade" data-filter=":odd">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3 class="modal-title"></h3>
+  </div>
+  <div class="modal-body"><div class="modal-image"></div></div>
+  <div class="modal-footer">
+    <a class="btn btn-small btn-success modal-play modal-slideshow" data-slideshow="5000">
+      <i class="icon-play icon-white"></i>
+      <span>Slideshow</span>
+    </a>
+    <a class="btn btn-small btn-info modal-prev">
+      <i class="icon-arrow-left icon-white"></i>
+      <span>Previous</span>
+    </a>
+    <a class="btn btn-small btn-primary modal-next">
+      <span>Next</span>
+      <i class="icon-arrow-right icon-white"></i>
+    </a>
+  </div>
+</div>
+
+
+<script>
+  var fileUploadErrors = {
+    maxFileSize: 'File is too big',
+    minFileSize: 'File is too small',
+    acceptFileTypes: 'Filetype not allowed',
+    maxNumberOfFiles: 'Max number of files exceeded',
+    uploadedBytes: 'Uploaded bytes exceed file size',
+    emptyResult: 'Empty file upload result'
+  };
+</script>
+
+<%= render "shared/fileupload/queue" %>
+
+<%= render "shared/fileupload/index" %>
+
+<%= render "shared/fileupload/js_include_local" %>

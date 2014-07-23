@@ -1,0 +1,13 @@
+<div class="form-inline">
+  <% if user_signed_in? %>
+  <span style="margin-right: 20px;" class="text-success">
+    Welcome <%= current_user.email %>
+  </span>
+  
+  <span>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+  </span>
+<% else %>
+  <%= link_to 'Login', new_user_session_path, :class => "btn btn-md btn-success" %>
+<% end %>
+</div>

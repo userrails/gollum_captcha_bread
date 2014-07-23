@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee4</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    
+      <%= stylesheet_link_tag 'jquery-file-upload/css/style.css'%>
+
+      <%= stylesheet_link_tag "jquery-file-upload/css/bootstrap-image-gallery.min.css" %>
+      <%= stylesheet_link_tag "jquery-file-upload/css/jquery.fileupload-ui.css" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="panel-body">
+        <div class="row">
+          <%= render 'layouts/user_widget' %>
+        </div>
+        
+        <div class="row">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
